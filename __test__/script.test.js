@@ -21,4 +21,8 @@ describe("String Calculator", () => {
     expect(() => add(1, 3, 4, 9, -3)).toThrow("negatives not allowed: -3");
     expect(() => add(4, 4, -8, 4, 4, 9, -4)).toThrow("negatives not allowed: -8 -4");
   });
+
+  test("Numbers bigger than 1000 should be ignored, so adding 2 + 1001  = 2", () => {
+    expect(add(2, 1001)).toBe(2);
+  });
 });
